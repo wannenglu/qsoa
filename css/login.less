@@ -1,0 +1,56 @@
+/* 样式重置 */
+body,div,h1,h2,h3,h4,h5,p,form,ul,li,dl,dt,dd,span,a,img,em,i,strong,b,input,select,textarea{ margin:0px; padding:0px;}
+li{ list-style:none;}
+img{ border:0 none; vertical-align:top;}
+textarea,input{ outline: none;}
+textarea{ resize: none;}
+em,i{ font-style:normal;}
+a{ text-decoration:none; color:#000;}
+a:hover{ color:#969696;}
+body{ font-family:'微软雅黑'; font-size:14px; color:#000; background:#fff;}
+.clearfix{*zoom:1;}
+.clearfix:after{ content:"."; visibility:hidden; height:0; display:block; clear:both;}
+
+/* 宽高 */
+.wh(@w,@h){ width: @w; height: @h;}
+/* 背景图片 */
+@imgSrc:"../images";
+.bg(@url,@repeat,@x,@y,@sizeW,@sizeH){ background: url("@{imgSrc}/@{url}") @repeat @x @y; background-size:@sizeW @sizeH;}
+/* 边框 */
+.bd(@col,@bdW,@sty){ border: @col @bdW @sty;}
+.header_logo{ float: left; .wh(266px,99px); margin-right: 43px;}
+.header_logo{ .bg("../images/logo.jpg",no-repeat,0,0,100%,100%);
+    a{ text-indent: -99em; overflow: hidden;}
+    a{ display: block; .wh(100%,100%);}
+}
+.login_header{ float: right;}
+.loginMain{ .wh(100%,100%); background: #f1f1f1;}
+.loginBox{ .wh(618px,390px); padding-top: 50px;}
+.login_h2{ .wh(270px,50px); margin: 0 auto; text-align: center; line-height: 50px;}
+.login{ .wh(100%,250px); background: #fff;}
+.login_box{ float: left; .wh(559px,94px); .bd(#c9c9c9,1px,solid); margin: 18px 0px 0px 28px; display: inline;
+    
+    dt{ float: left; .wh(81px,94px); border-right: #c7c7c7 1px solid; background: #f3f3f3;
+        
+        em{ margin: 25px 0px 0px 20px;}
+    }
+    
+    dd{ float: left; position: relative; .wh(470px,94px);
+        
+        span{ position: absolute; top: 0px; left: 0px; .wh(317px,94px); padding-left: 18px; line-height: 94px; z-index: 99; color: #c2c2c2; font-size: 14px; }
+    }
+}
+.login_wrong{ position:absolute; .wh(140px,32px); line-height:32px; top: 28px; right:0px; z-index:2; padding-left: 34px;}
+.login_wrong{ background: url(../images/login_btn.png) no-repeat -385px -430px; color: #ffac3a; font-size: 14px;}
+.login_box_input{ float:left; .wh(310px,22px); line-height:22px; padding:36px 7px 36px 18px; color:#c2c2c2; font-size:14px; background:none; border:0 none;}
+.login_user,.login_password{ display:block; .wh(40px,40px); text-indent: -99em; overflow: hidden;}
+.login_user{ background: url(../images/login_btn.png) no-repeat -14px -80px;}
+.login_password{ background: url(../images/login_btn.png) no-repeat -86px -82px;}
+.login_btn{ float: left; .wh(135px,53px); font-size: 18px; color: #fff; text-align: center; line-height: 55px; border: 0 none; background: url(../images/login_btn.png) no-repeat -290px -69px; padding-bottom: 5px; cursor: pointer; margin-top: 20px;
+    
+    &:hover{ opacity: 0.9; filter:alpha(opacity=90);}
+}
+.login_aa{ .wh(616px,20px); border-top: 4px solid #ebebeb; text-align: center; line-height: 20px; color: #8c8b8b; font-size: 12px;
+    
+    a{ margin: 0 12px;}
+}
