@@ -1017,7 +1017,6 @@ body {
 }
 .allBtn h6,
 .oneBtn h6 {
-  width:auto;
   height: 30px;
 }
 .allBtn i,
@@ -1035,10 +1034,14 @@ body {
   right: 30px;
 }
 .allBtn h6 {
+  width: 50px;
   margin-right: 5px;
 }
 .oneBtn {
   right: -10px;
+}
+.oneBtn h6 {
+  width: 30px;
 }
 .oneBtn i {
   background-position-y: -80px;
