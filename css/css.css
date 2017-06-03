@@ -1034,7 +1034,7 @@ body {
   right: 30px;
 }
 .allBtn h6 {
-  width: 50px;
+  width: auto;
   margin-right: 5px;
 }
 .oneBtn {
