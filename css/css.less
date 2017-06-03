@@ -2,7 +2,7 @@
 body,div,h1,h2,h3,h4,h5,h6,p,form,ul,li,dl,dt,dd,span,a,img,em,i,strong,b,input,select,textarea{ margin:0px; padding:0px;}
 li{ list-style:none;}
 img{ border:0 none; vertical-align:top;}
-textarea,input{ outline: none;}
+textarea,input,select{ outline: none;}
 textarea{ resize: none;}
 em,i{ font-style:normal;}
 a{ text-decoration:none; color:#000;}
@@ -58,7 +58,7 @@ body{ font-family:'微软雅黑'; font-size:14px; color:#000; background:#fff;}
 
 /* index主体 */
 .index-box{ overflow: hidden;}
-.index-box,.birthday-box,.notice-box,.company-box,.rules-box{ .wh(100%,auto); background: #f1f1f1;}
+.index-box,.birthday-box,.notice-box,.company-box,.rules-box,.my_inform-box,.basic_inform-box{ .wh(100%,auto); background: #f1f1f1;}
 .index-box-Banner{ .wh(2560px,646px); position: relative; left: 50%; top: 0; margin-left: -1280px;}
 .index-box-Banner{ background: url(../images/index07.jpg) no-repeat; background-size: auto 100%;}
 .indexBanner{ position: relative;}
@@ -180,10 +180,26 @@ body{ font-family:'微软雅黑'; font-size:14px; color:#000; background:#fff;}
 /* notice */
 .notice-box .main-title{ margin-bottom: 32px;}
 
-
-
-
-
+/* 个人资料 */
+.my_inform{ .wh(798px,auto); margin-top: 33px; margin: 33px auto 0; padding-bottom: 92px;}
+.myInform_left,.myInform_right{ float: left; .wh(399px,auto);}
+.myInform_list,.myInform_list01{ .wh(auto,33px); padding: 7px 0;
+    
+    span{ float: left; color: #4e4e4e; font-size: 15px; width: 92px;}
+    
+}
+.myInform_list{
+    span{ line-height: 33px;}
+    .myInformList_spanT{ width: auto;}
+    input,select{ .wh(236px,31px); border: 1px #dcdcdc solid; border-radius: 4px;}
+    .sel1{ width: 72px;}
+    .sel2,.sel3{ width: 50px;}
+}
+.myInform_list01{ height: 80px;
+    
+    img{ float: left; .wh(80px,80px);}
+}
+.sub{ float: left; display: block; .wh(152px,34px); color: #fff; background: #46a7f1; border-radius: 2px; border: 0 none; margin: 57px 0 0 93px;}
 
 
 /* 底部 */

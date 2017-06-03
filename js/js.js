@@ -170,6 +170,12 @@ var admin = {
 						}
 						$(".indexBoxMain_user_Info span").html(json.realname);
 						$(".indexBoxMain_user_Info i").html("(" + json.othername + "_全速)");
+						
+						$("#realSex").html(json.sex);
+						$("#jiguan").html(json.jiguan);
+						$("#realBirth").html(json.birthday);
+						$("#juzhudi").html(json.juzhudi);
+						$("#hometown").html(json.hometown);
 					},
 					error:function(xml,status,error){
 						alert("请稍后重试");
@@ -702,5 +708,129 @@ var timeTable = {
 			url:'json/date.json'
 		});
 
+	}
+}
+
+//个人资料
+var ruzAndzhuanz = {
+	init: function(){
+		function ruzhuandate(a,b,c){
+			//生成日期
+			function creatDate(){
+				//生成1900年-2100年
+				for(var i = 1900; i<=2100;i++){
+					var option = document.createElement('option');
+					option.setAttribute('value',i);
+					option.innerHTML = i;
+					a.appendChild(option);
+				}
+				//生成1月-12月
+				for(var i = 1; i <=12; i++){
+					var option = document.createElement('option');
+					option.setAttribute('value',i);
+					option.innerHTML = i;
+					b.appendChild(option);	
+				}
+				//生成1日—31日
+				for(var i = 1; i <=31; i++){
+					var option = document.createElement('option');
+					option.setAttribute('value',i);
+					option.innerHTML = i;
+					c.appendChild(option);	
+				}
+			}
+			creatDate();
+			//保存某年某月的天数
+			var days;
+			//年份点击
+			a.onclick = function(){
+				//月份显示默认值
+				b.options[0].selected = true;
+				//天数显示默认值
+				c.options[0].selected = true;
+			}
+			//月份点击
+			b.onclick = function(){
+				//天数显示默认值
+				c.options[0].selected = true;
+				//计算天数的显示范围
+				//如果是2月
+				if(b.value == 2){
+				    //如果是闰年
+				    if((a.value % 4 === 0 && a.value % 100 !== 0)  || a.value % 400 === 0){
+				        days = 29;
+				    //如果是平年
+				    }else{
+				        days = 28;
+				    }
+				//如果是第4、6、9、11月
+				}else if(b.value == 4 || b.value == 6 || b.value == 9 || b.value == 11){
+				    days = 30;
+				}else{
+				    days = 31;
+				}
+				//增加或删除天数
+				//如果是28天，则删除29、30、31天(即使他们不存在也不报错)
+				if(days == 28){
+					c.remove(31);
+					c.remove(30);
+					c.remove(29);
+				}
+				//如果是29天
+				if(days == 29){
+					c.remove(31);
+					c.remove(30);
+					//如果第29天不存在，则添加第29天
+					if(!c.options[29]){
+						c.add(new Option('29','29'),undefined)
+					}
+				}
+				//如果是30天
+				if(days == 30){
+					c.remove(31);
+					//如果第29天不存在，则添加第29天
+					if(!c.options[29]){
+						c.add(new Option('29','29'),undefined)
+					}
+					//如果第30天不存在，则添加第30天
+					if(!c.options[30]){
+						c.add(new Option('30','30'),undefined)
+					}
+				}
+				//如果是31天
+				if(days == 31){
+					//如果第29天不存在，则添加第29天
+					if(!c.options[29]){
+						c.add(new Option('29','29'),undefined)
+					}
+					//如果第30天不存在，则添加第30天
+					if(!c.options[30]){
+						c.add(new Option('30','30'),undefined)
+					}
+					//如果第31天不存在，则添加第31天
+					if(!c.options[31]){
+						c.add(new Option('31','31'),undefined)
+					}
+				}
+			}
+		}
+		ruzhuandate(add_sel1,add_sel2,add_sel3);
+		ruzhuandate(zhuan_sel1,zhuan_sel2,zhuan_sel3);
+		
+		function bumzhiw(a,arr){
+			//生成部门/职务
+			function creat(){
+				
+				for(var i = 0; i<arr.length;i++){
+					var option = document.createElement('option');
+					option.setAttribute('value',arr[i]);
+					option.innerHTML = arr[i];
+					a.appendChild(option);
+				}
+			}
+			creat();
+		}
+		bumzhiw(bumen,["移动智能组","UED产品一组","UED产品二组"]);
+		bumzhiw(zhiwu,["视觉设计师","web前端工程师"]);
 	}
 }

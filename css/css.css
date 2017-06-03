@@ -35,7 +35,8 @@ img {
   vertical-align: top;
 }
 textarea,
-input {
+input,
+select {
   outline: none;
 }
 textarea {
@@ -267,7 +268,9 @@ body {
 .birthday-box,
 .notice-box,
 .company-box,
-.rules-box {
+.rules-box,
+.my_inform-box,
+.basic_inform-box {
   width: 100%;
   height: auto;
   background: #f1f1f1;
@@ -808,6 +811,72 @@ body {
 /* notice */
 .notice-box .main-title {
   margin-bottom: 32px;
+}
+/* 个人资料 */
+.my_inform {
+  width: 798px;
+  height: auto;
+  margin-top: 33px;
+  margin: 33px auto 0;
+  padding-bottom: 92px;
+}
+.myInform_left,
+.myInform_right {
+  float: left;
+  width: 399px;
+  height: auto;
+}
+.myInform_list,
+.myInform_list01 {
+  width: auto;
+  height: 33px;
+  padding: 7px 0;
+}
+.myInform_list span,
+.myInform_list01 span {
+  float: left;
+  color: #4e4e4e;
+  font-size: 15px;
+  width: 92px;
+}
+.myInform_list span {
+  line-height: 33px;
+}
+.myInform_list .myInformList_spanT {
+  width: auto;
+}
+.myInform_list input,
+.myInform_list select {
+  width: 236px;
+  height: 31px;
+  border: 1px #dcdcdc solid;
+  border-radius: 4px;
+}
+.myInform_list .sel1 {
+  width: 72px;
+}
+.myInform_list .sel2,
+.myInform_list .sel3 {
+  width: 50px;
+}
+.myInform_list01 {
+  height: 80px;
+}
+.myInform_list01 img {
+  float: left;
+  width: 80px;
+  height: 80px;
+}
+.sub {
+  float: left;
+  display: block;
+  width: 152px;
+  height: 34px;
+  color: #fff;
+  background: #46a7f1;
+  border-radius: 2px;
+  border: 0 none;
+  margin: 57px 0 0 93px;
 }
 /* 底部 */
 .footer {

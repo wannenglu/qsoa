@@ -83,7 +83,7 @@
 					<img class="header_user_img" src="" />
 					<span class="header_user_san"></span>
 					<ul class="header_user_nav" style="display: none;">
-						<li><a href="##">我的资料</a></li>
+						<li><a href="#my_information">我的资料</a></li>
 						<li><a href="##">修改密码</a></li>
 						<li><a href="##">个人设备</a></li>
 						<li><a href="##">我的报销</a></li>
@@ -140,12 +140,20 @@
 					controller:"product"
 				})
 				.when("/company_an",{
-					templateUrl:app.templatePath + "company-an.html",
+					templateUrl:app.templatePath + "company_an.html",
 					controller:"company_an"
 				})
 				.when("/rules",{
 					templateUrl:app.templatePath + "rules.html",
 					controller:"rules"
+				})
+				.when("/my_information",{
+					templateUrl:app.templatePath + "my_information.html",
+					controller:"my_information"
+				})
+				.when("/basic_information",{
+					templateUrl:app.templatePath + "basic_information.html",
+					controller:"basic_information"
 				})
 			}]);
 			
@@ -188,6 +196,15 @@
 				allBtnAndOneBtn.init();
 				paging.init();
 				timeTable.init();
+			});
+			
+			app.controller("my_information",function($scope){
+				admin.init();
+				ruzAndzhuanz.init();
+			});
+			
+			app.controller("basic_information",function($scope){
+				admin.init();
 			});
 			
 		</script>
